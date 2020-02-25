@@ -123,6 +123,7 @@
     border: 2px solid var(--lightBorder);
     cursor: pointer;
     transition: all 0.1s linear;
+    padding: 0;
   }
 
 }
