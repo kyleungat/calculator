@@ -108,11 +108,13 @@
   }    
 
   .panel{
+    width: 100%;
+    margin: 0 auto;
     display: grid;
     grid-template-rows: repeat(5, minmax(20px,70px));
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    column-gap: 15px;
+    /* gap: 15px; */
+    /* column-gap: 1fr; */
     row-gap: 15px;
   }
   
@@ -123,4 +125,5 @@
     cursor: pointer;
     transition: all 0.1s linear;
   }
+
 }
