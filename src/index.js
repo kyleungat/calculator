@@ -3,8 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { CalculatorContextProvider } from './CalculatorContext'
+import { ThemeContextProvider } from './ThemeContext'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(
+    <ThemeContextProvider>
+        <CalculatorContextProvider>
+            <App />
+        </CalculatorContextProvider>
+    </ThemeContextProvider>
+    , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

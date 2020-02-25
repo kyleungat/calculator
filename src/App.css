@@ -1,38 +1,119 @@
-.App {
+:root {
+  --lightPrimary: #eeeeee;
+  --lightSecondary: #aaaaaa;
+  --lightSecondary2: #cdcdcd;
+  --lightBorder: #222222;
+}
+
+.App{
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: var(--lightPrimary);
+  padding: 1em;
+}
+
+.toggle-btn{
+  font-size: 1.5em;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.toggle-btn:active, .toggle-btn:focus {
+  outline: none;
+}
+
+
+.App h1{
+  font-size: 3rem;
   text-align: center;
+  margin: 0 auto 1rem;
+  text-transform: uppercase;
+  text-shadow: 5px 5px #aaaaaa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.view-container{
+  background-color: var(--lightSecondary2);
+  border: 2px solid var(--lightBorder);
+  height: 15vh;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #000000;
+  margin-bottom: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.view{
+  color: #000000;
+  padding: 0 0.5em;
+  overflow-x: auto;
+  text-align: right;
+  font-size: 3em;
+  white-space: nowrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.panel{
+  display: grid;
+  grid-template-rows: repeat(5, minmax(80px,130px));
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}  
+
+.btn.span-2{
+  border-radius: 2em;
+  grid-column: span 2;
+}
+
+.btn{
+  border-radius: 50%;
+  font-size: 3.5em;
+  border: 2px solid #222222;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.btn:active, .btn:focus{
+  outline: none;
+}
+
+.number-btn:hover, .number-btn:active{
+  background: #949392;
+}
+
+.state-action-btn{
+  background: #ee6f08;
+  color: #ffffff;
+}
+
+.state-action-btn:hover,.active.state-action-btn {
+  color: #ee6f08;
+  background: #ffffff;
+}
+
+.action-btn{
+  background: var(--lightSecondary);
+  color: #ffffff;
+}
+
+.action-btn:hover, .action-btn:active{
+  background: #828282;
+}
+
+
+@media screen and (max-width: 576px){
+  .panel{
+    display: grid;
+    grid-template-rows: repeat(5, minmax(50px,70px));
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .btn{
+    border-radius: 50%;
+    font-size: 2em;
+    border: 2px solid var(--lightBorder);
+    cursor: pointer;
+    transition: all 0.3s linear;
   }
 }
